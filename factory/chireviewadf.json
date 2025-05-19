@@ -1,0 +1,9 @@
+{
+	"name": "chireviewadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c0d782d0-e0c4-4537-a8f3-929826b687bc",
+		"tenantId": "4a5c1c64-24b2-4543-a56a-46ef5057d5c9"
+	}
+}
