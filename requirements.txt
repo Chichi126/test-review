@@ -1,0 +1,24 @@
+azure-storage-blob>=12.13.0
+azure-identity>=1.10.0
+azure-core>=1.24.0
+
+# Azure CLI for authentication fallback
+azure-cli-core>=2.40.0
+
+# Data handling and processing
+pandas>=1.5.0
+numpy>=1.23.0
+
+# File handling and path manipulation
+pathlib>=1.0.1
+python-dotenv>=0.21.0
+
+# Progress tracking and logging
+tqdm>=4.64.0
+# # Parallel processing for large uploads
+# concurrent-futures>=3.0.5
+# multiprocessing>=0.70.13
+
+
+# Optional - for handling different file types
+pyarrow>=9.0.0    # Parquet files
