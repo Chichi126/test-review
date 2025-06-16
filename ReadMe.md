@@ -45,7 +45,7 @@ GitHub (Version Control)
 
 
 
-### Step-by-Step Implementation
+### Implementation Overview
 
 #### **1. Data Ingestion**
 
@@ -101,21 +101,21 @@ raw_path = "abfss://yourcontainer@yourstorage.dfs.core.windows.net/bronze"
 
  Maven: com.crealytics:spark-excel_2.12:0.13.5
 
-csv_df = spark.readStream \
+`csv_df = spark.readStream \
     .format("cloudFiles") \
     .option("cloudFiles.format", "csv") \
     .option("header", "true") \
     .option("inferSchema", "true") \
     .option("cloudFiles.schemaLocation", "abfss://.../schemas/crypto_csv") \
-    .load(raw_path)
+    .load(raw_path)`
 
-excel_df = spark.readStream \
+`excel_df = spark.readStream \
     .format("cloudFiles") \
     .option("cloudFiles.format", "binaryFile") \
     .option("cloudFiles.schemaLocation", "abfss://.../schemas/crypto_excel") \
     .load(raw_path) \
     .filter("path LIKE '%.xlsx'") \
-    .selectExpr("path as file_path")
+    .selectExpr("path as file_path")`
 
 
 ✅ Step 4: Data Transformation
@@ -130,14 +130,14 @@ df_final = df_raw.withColumn("date_partition", to_date("ingest_timestamp"))
 
 ✅ Step 5: Save to Silver Layer with Delta Format
 
-silver_path = "abfss://.../silver/customer_reviews"
+`silver_path = "abfss://.../silver/customer_reviews"`
 
-df_final.writeStream \
+`df_final.writeStream \
     .format("delta") \
     .outputMode("append") \
     .option("checkpointLocation", "abfss://.../checkpoints/reviews") \
     .partitionBy("date_partition") \
-    .start(silver_path)
+    .start(silver_path)`
 
 ✅ Step 6: Unity Catalog Registration
 
