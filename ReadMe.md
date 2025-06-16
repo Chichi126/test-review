@@ -5,18 +5,18 @@
 
 #### Project Overview
 
-##### Aim
+#### Aim
 
 The goal of this project is to build a scalable, secure, and well-governed data pipeline to process customer review data using Azure Data Lake Storage, Unity Catalog, and Databricks. 
 
 The pipeline ingests raw review data, transforms and cleans it in Databricks using PySpark, and stores the processed data in a structured format for analytics and reporting.
 
-##### Business Importance
+#### Business Importance
 
 Customer feedback is a valuable asset for any company seeking to improve product offerings, customer experience, and brand reputation. This project empowers cross-functional teams, including Marketing, Product, and Data Teams, with clean, timely, and accessible customer sentiment data. By implementing data governance through Unity Catalog and ensuring secure access controls, this solution supports regulatory compliance, promotes collaboration, and accelerates data-driven decision-making across the organization.
 
 
-##### Features
+#### Features
 
 Secure and scalable data ingestion from API or file sources
 
@@ -31,7 +31,7 @@ Metadata and lineage tracking
 Optimized output for downstream analytics and ML models
 
 
-##### Stack And Technologies Used
+#### Stack And Technologies Used
 
 Azure Data Lake Storage Gen2
 
@@ -45,7 +45,7 @@ GitHub (Version Control)
 
 
 
-### 🔧 **Step-by-Step Implementation**
+### Step-by-Step Implementation
 
 #### **1. Data Ingestion**
 
@@ -85,7 +85,7 @@ GitHub (Version Control)
 
 ---
 
-📘 Step-by-Step Implementation
+#### Step-by-Step Implementation
 
 ✅ Step 1: API Data Ingestion
 Write code in vscode to upload data to Azure Storage 
@@ -149,11 +149,8 @@ CREATE TABLE reviews_catalog.silver.customer_reviews
 USING DELTA
 LOCATION 'abfss://.../silver/customer_reviews';
 
-🎓 Learning Outcome
 
-This project demonstrates practical skills in designing cloud-native data pipelines using Azure and Databricks. It emphasizes data governance, secure access, and scalable processing, aligning with enterprise-grade data engineering roles.
-
-📖 How to Run
+#### How to Run
 
 Clone this repo
 
@@ -164,7 +161,7 @@ Deploy notebooks on Databricks
 Execute ingestion and transformation pipelines step-by-step
 
 
-##### Create Pipelines in ADF
+### Create Pipelines in ADF
 
 Pipeline Name: Ingest_CSV_Excel_Pipeline
 
@@ -190,14 +187,14 @@ Path: /path/to/excel_notebook
 
 Link the CSV notebook activity → Excel notebook activity to run sequentially.
 
-###### Trigger the Pipeline
+##### Trigger the Pipeline
 Add a Trigger to schedule it daily or run manually.
 
 Monitor execution via ADF Monitor tab.
 
 
 
-##### Project Outcome & Business Benefits
+### Project Outcome & Business Benefits
 This project successfully delivers a production-grade data pipeline that ingests customer review data in both CSV and Excel formats using Azure Data Factory and Databricks. The pipeline transforms and stores the data in partitioned Delta tables within Azure Data Lake, all governed under Unity Catalog for secure, enterprise-wide access.
 
 Key benefits to the company include:
